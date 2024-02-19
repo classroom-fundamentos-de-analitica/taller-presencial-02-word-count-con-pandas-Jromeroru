@@ -44,7 +44,7 @@ def count_words(dataframe):
 
     conteo = dataframe.groupby(["word"], as_index=False).agg(
         {
-            "count": sum
+            "count": 'sum'
         }
     )
 
@@ -53,7 +53,7 @@ def count_words(dataframe):
 
 def save_output(dataframe, output_filename):
     """Save output to a file."""
-    dataframe.to_csv(output_filename, index=False, sep="\t")
+    dataframe.to_csv(output_filename, index=False, sep="\t", header=False)
 
 #
 # Escriba la función job, la cual orquesta las funciones anteriores.
